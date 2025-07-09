@@ -1,0 +1,138 @@
+/* EduBoard Dashboard CSS */
+
+:root {
+  --primary: #2a73cc;
+  --light: #f9f9f9;
+  --dark: #1a1a1a;
+  --gray: #ddd;
+  --card-bg: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  background: var(--light);
+}
+
+nav {
+  width: 250px;
+  background: var(--primary);
+  color: #fff;
+  padding: 2rem 1rem;
+}
+
+nav h2 {
+  margin-bottom: 2rem;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  margin: 1rem 0;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+header {
+  background: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--gray);
+}
+
+header .profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+header .profile img {
+  width: 40px;
+  border-radius: 50%;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-content {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.progress-table, .deadlines, .profile-card {
+  grid-column: span 2;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th, table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--gray);
+  text-align: left;
+}
+
+.progress-bar {
+  background: var(--gray);
+  border-radius: 20px;
+  overflow: hidden;
+  height: 10px;
+}
+
+.progress {
+  height: 100%;
+  background: var(--primary);
+}
+
+.badge {
+  background: var(--primary);
+  color: #fff;
+  border-radius: 20px;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.8rem;
+}
+
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+@media(max-width: 768px) {
+  nav {
+    display: none;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
