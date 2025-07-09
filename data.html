@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduBoard Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #2a73cc;
+      --light: #f9f9f9;
+      --dark: #1a1a1a;
+      --gray: #ddd;
+      --card-bg: #fff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      display: flex;
+      min-height: 100vh;
+      background: var(--light);
+    }
+
+    nav {
+      width: 250px;
+      background: var(--primary);
+      color: #fff;
+      padding: 2rem 1rem;
+    }
+
+    nav h2 {
+      margin-bottom: 2rem;
+    }
+
+    nav ul {
+      list-style: none;
+    }
+
+    nav ul li {
+      margin: 1rem 0;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    header {
+      background: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--gray);
+    }
+
+    header .profile {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    header .profile img {
+      width: 40px;
+      border-radius: 50%;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .dashboard-content {
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .progress-table, .deadlines, .profile-card {
+      grid-column: span 2;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    table th, table td {
+      padding: 0.75rem;
+      border-bottom: 1px solid var(--gray);
+      text-align: left;
+    }
+
+    .progress-bar {
+      background: var(--gray);
+      border-radius: 20px;
+      overflow: hidden;
+      height: 10px;
+    }
+
+    .progress {
+      height: 100%;
+      background: var(--primary);
+    }
+
+    .badge {
+      background: var(--primary);
+      color: #fff;
+      border-radius: 20px;
+      padding: 0.2rem 0.6rem;
+      font-size: 0.8rem;
+    }
+
+    .profile-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    @media(max-width: 768px) {
+      nav {
+        display: none;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <h2>EduBoard</h2>
+    <ul>
+      <li><a href="#">Dashboard</a></li>
+      <li><a href="#">Subjects</a></li>
+      <li><a href="#">Attendance</a></li>
+      <li><a href="#">Profile</a></li>
+      <li><a href="#">Settings</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <header>
+      <div class="title">Welcome, Likhith</div>
+      <div class="profile">
+        <img src="https://avatars.githubusercontent.com/u/174157562?v=4&size=64" alt="Student Avatar">
+        <i class="fas fa-bell"></i>
+      </div>
+    </header>
+
+    <section class="dashboard-content">
+      <article class="card">
+        <h3>GPA</h3>
+        <p>8.5</p>
+      </article>
+      <article class="card">
+        <h3>Attendance</h3>
+        <p>92%</p>
+      </article>
+      <article class="card">
+        <h3>Assignments Due</h3>
+        <p>3</p>
+      </article>
+      <article class="card">
+        <h3>Total Credits</h3>
+        <p>20</p>
+      </article>
+
+      <article class="card progress-table">
+        <h3>Subject Progress</h3>
+        <table>
+          <tr>
+            <th>Subject</th>
+            <th>Progress</th>
+          </tr>
+          <tr>
+            <td>Maths</td>
+            <td>
+              <div class="progress-bar">
+                <div class="progress" style="width: 80%"></div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>AI</td>
+            <td>
+              <div class="progress-bar">
+                <div class="progress" style="width: 60%"></div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Web Tech</td>
+            <td>
+              <div class="progress-bar">
+                <div class="progress" style="width: 75%"></div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </article>
+
+      <article class="card deadlines">
+        <h3>Upcoming Deadlines</h3>
+        <ul>
+          <li><span class="badge">July 12</span> Web Tech Assignment 4</li>
+          <li><span class="badge">July 15</span> AI Project Phase 1</li>
+          <li><span class="badge">July 20</span> Math Quiz</li>
+        </ul>
+      </article>
+
+      <article class="card profile-card">
+        <h3>Student Profile</h3>
+        <p><strong>Name:</strong> Likhith H J</p>
+        <p><strong>Roll No:</strong> 21AI123</p>
+        <p><strong>Email:</strong> 19likhith@gmail.com</p>
+        <p><strong>College:</strong> East West Institute of Technology</p>
+        <p><strong>Department:</strong> AI & Data Science</p>
+      </article>
+    </section>
+  </main>
+</body>
+
+</html>
